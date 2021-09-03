@@ -17,6 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PlantDetailsByString {
+    private Long plantId;
     private List<String> tradeNameList;
     private String taxonStatus;
     private String scientificName;
@@ -56,6 +57,7 @@ public class PlantDetailsByString {
 
         for (Long l : plantIdsSet) {
             PlantDetailsByString p = new PlantDetailsByString();
+            p.setPlantId(l);
             p.setTradeNameList(td.listOfTradeNameByPlantId(l));
             p.setTaxonStatus(tnl.getTaxonStatusByPlantId(l));
             p.setScientificName(tnl.getScintificNameByPlantId(l));

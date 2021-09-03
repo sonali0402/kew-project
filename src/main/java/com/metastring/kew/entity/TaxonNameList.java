@@ -77,21 +77,31 @@ public class TaxonNameList extends PanacheEntityBase {
     public String getTaxonStatusByPlantId(Long l){
         String taxonStatus;
         TaxonNameList t=TaxonNameList.findById(l);
-        taxonStatus=t.getTaxonStatus();
+        if(t!=null)
+         taxonStatus=t.getTaxonStatus();
+        else
+            taxonStatus=null;
+
         return taxonStatus;
     }
 
     public String getScintificNameByPlantId(Long l){
         String scientificName;
         TaxonNameList t=TaxonNameList.findById(l);
+        if(t!=null)
         scientificName=t.getScientificName();
+       else scientificName=null;
+
         return scientificName;
     }
 
     public Long getMatchIdByPlantId(Long l){
         Long matchId;
         TaxonNameList t=TaxonNameList.findById(l);
+        if(t!=null)
         matchId=t.getMatchId();
+        else matchId=null;
+
         return matchId;
     }
 

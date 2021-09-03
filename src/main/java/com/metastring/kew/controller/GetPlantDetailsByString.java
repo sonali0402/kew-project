@@ -32,11 +32,14 @@ public class GetPlantDetailsByString {
 //        plantIds.addAll(c.listOfPlantIdWhereCommonNameLike(s));
 //        plantIds.addAll(a.listOfPlantIdsWhereDrugNameLike(s));
 //        plantIds.addAll(td.listOfPlantIdsWhereTradeNameLike(s));
+//        return Response.ok().entity(plantIds).build();
+//
 
         PlantDetailsByString plantDetailsByString=new PlantDetailsByString();
         List<PlantDetailsByString> plantDetailsByStringList= plantDetailsByString.getPlantDetailsByString(s);
 
         return Response.ok().entity(plantDetailsByStringList).build();
+
     }
 
 }
